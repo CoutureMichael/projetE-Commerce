@@ -15,8 +15,8 @@
         <div class="col-md-4">
             <div class="card p-4 shadow-sm">
                 <h2 class="text-center mb-4">Se connecter</h2>
-                <c:if test="${not empty error}">
-                    <div class="alert alert-danger">${error}</div>
+                <c:if test="${not empty erreur}">
+                    <div class="alert alert-danger">${erreur}</div>
                 </c:if>
                 <form method="post" action="${pageContext.request.contextPath}/login">
                     <div class="mb-3">

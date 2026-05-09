@@ -161,10 +161,16 @@ public class AuthServlet extends HttpServlet {
             response.addCookie(cookie);
         }
 
-        // Redirection vers la page produits pour tous les utilisateurs
-        response.sendRedirect(
-                request.getContextPath() + "/produits"
-        );
+        // Redirection selon le rôle
+        if (utilisateur.getRole() == Utilisateur.Role.ADMIN) {
+            response.sendRedirect(
+                    request.getContextPath() + "/admin/produits"
+            );
+        } else {
+            response.sendRedirect(
+                    request.getContextPath() + "/catalogue"
+            );
+        }
     }
 
     // Inscription utilisateur
