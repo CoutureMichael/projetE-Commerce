@@ -35,7 +35,7 @@
 
             <!--Create table -> modifier apres en update-->
             <property name="hibernate.hbm2ddl.auto"
-                      value="create"/>
+                      value="update"/>
 
             <property name="hibernate.show_sql"
                       value="true"/>
