@@ -1,6 +1,7 @@
 package com.ecommerce.service;
 
 import com.ecommerce.model.Utilisateur;
+import com.ecommerce.util.PasswordHasher;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -54,7 +55,7 @@ public class AuthService {
 
         utilisateur.setNom(nom);
         utilisateur.setEmail(email);
-        utilisateur.setPassword(password);
+        utilisateur.setPassword(PasswordHasher.hashPassword(password)); // Password hashed
 
         // Role par défaut
         utilisateur.setRole(Utilisateur.Role.USER);
@@ -101,9 +102,11 @@ public class AuthService {
             return null;
         }
 
-        // Mauvais mot de passe
-        if (!utilisateur.getPassword()
-                .equals(password)) {
+        // Vérification entre le password hasher et le password de l'utilisateur
+        if (!PasswordHasher.verifyPassword(
+                password,
+                utilisateur.getPassword()
+        )) {
 
             return null;
         }

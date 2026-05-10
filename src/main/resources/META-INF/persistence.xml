@@ -22,18 +22,18 @@
                       value="com.mysql.cj.jdbc.Driver"/>
 
             <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost:3306/ecommerce?useSSL=false&amp;serverTimezone=UTC"/>
+                      value="jdbc:mysql://localhost:3306/ecommerce?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC"/>
 
             <property name="jakarta.persistence.jdbc.user"
                       value="root"/>
 
             <property name="jakarta.persistence.jdbc.password"
-                      value="Jade"/>
+                      value="mySQLjeffSawma@!1"/>
 
             <property name="hibernate.dialect"
                       value="org.hibernate.dialect.MySQLDialect"/>
 
-            <!--Create table -> modifier apres en update-->
+            <!-- Create table -> modifier apres en update -->
             <property name="hibernate.hbm2ddl.auto"
                       value="update"/>
 
