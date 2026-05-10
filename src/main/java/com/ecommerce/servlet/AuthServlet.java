@@ -2,6 +2,7 @@ package com.ecommerce.servlet;
 
 import com.ecommerce.model.Utilisateur;
 import com.ecommerce.service.AuthService;
+import com.ecommerce.service.EmailService;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -209,6 +210,16 @@ public class AuthServlet extends HttpServlet {
 
             return;
         }
+
+        // Email service (Envoi Email)
+        EmailService emailService =
+                new EmailService();
+
+        emailService.envoyerEmail(
+                email,
+                "Bienvenue sur E-Commerce",
+                "Votre compte a été créé avec succès!"
+        );
 
         // Retour login
         response.sendRedirect(
