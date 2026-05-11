@@ -32,7 +32,7 @@ public class Commande implements Serializable {
     private Utilisateur utilisateur;
 
     // Produits commandés
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER) // Modified
     @JoinTable(
             name = "commande_produits",
             joinColumns = @JoinColumn(name = "commande_id"),

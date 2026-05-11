@@ -13,8 +13,10 @@ import java.io.IOException;
 @WebServlet(urlPatterns = {
         "/login",
         "/inscription",
-        "/logout"
+        "/logout",
+        "/profil"
 })
+
 public class AuthServlet extends HttpServlet {
 
     // Service auth
@@ -42,7 +44,14 @@ public class AuthServlet extends HttpServlet {
             ).forward(request, response);
 
         }
-        // LOGOUT
+        // PAGE PROFIL
+        else if (path.equals("/profil")) {
+
+            request.getRequestDispatcher(
+                    "/WEB-INF/views/auth/profil.jsp"
+            ).forward(request, response);
+        }
+        // PAGE LOGOUT
         else if (path.equals("/logout")) {
 
             // Détruit session

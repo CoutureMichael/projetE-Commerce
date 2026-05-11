@@ -25,7 +25,21 @@ public class Panier {
 
     // ajouter produit
     public void ajouterProduit(Produit produit) {
-        produits.put(produit, produits.getOrDefault(produit, 0) + 1);
+
+        for (Produit p : produits.keySet()) {
+
+            if (p.getId().equals(produit.getId())) {
+
+                produits.put(
+                        p,
+                        produits.get(p) + 1
+                );
+
+                return;
+            }
+        }
+
+        produits.put(produit, 1);
     }
 
     // modifier quantité
@@ -53,3 +67,4 @@ public class Panier {
         return total;
     }
 }
+

@@ -15,7 +15,9 @@ import java.util.List;
 
 @WebServlet(urlPatterns = {
         "/commande",
-        "/historique-commandes"
+        "/historique-commandes",
+        "/confirmation",
+        "/checkout"
 })
 public class CommandeServlet extends HttpServlet {
 
@@ -34,6 +36,20 @@ public class CommandeServlet extends HttpServlet {
 
             afficherHistorique(request, response);
 
+        }
+        // CONFIRMATION
+        else if (path.equals("/confirmation")) {
+
+            request.getRequestDispatcher(
+                    "/WEB-INF/views/commande/confirmation.jsp"
+            ).forward(request, response);
+        }
+        // CHECKOUT
+        else if (path.equals("/checkout")) {
+
+            request.getRequestDispatcher(
+                    "/WEB-INF/views/commande/checkout.jsp"
+            ).forward(request, response);
         }
         // VALIDER COMMANDE
         else {
@@ -77,7 +93,7 @@ public class CommandeServlet extends HttpServlet {
 
         response.sendRedirect(
                 request.getContextPath()
-                        + "/historique-commandes"
+                        + "/confirmation"
         );
     }
 
