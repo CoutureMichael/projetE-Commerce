@@ -33,7 +33,6 @@ import java.util.Objects;
             this.actif = actif;
         }
 
-        /// peut-etre à bouger
         // Applique la réduction du coupon, aussi non retourne le montant inchangé
         public double appliquerReduction(double montant) {
             if (!actif) return montant;

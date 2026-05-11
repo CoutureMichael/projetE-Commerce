@@ -5,7 +5,3 @@
         <p class="card-text">© Jade, Jeff, Michaël</p>
     </div>
 </div>
-<<<<<<< HEAD
-,
-=======
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824

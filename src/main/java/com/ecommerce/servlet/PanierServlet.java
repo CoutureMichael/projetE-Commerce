@@ -61,14 +61,10 @@ public class PanierServlet extends HttpServlet {
 
                 case "ajouter":
 
-<<<<<<< HEAD
-                    System.out.println("Ajout produit : " + produit.getNom());
-=======
                     System.out.println(
                             "Ajout produit : "
                                     + produit.getNom()
                     );
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
                     panier.ajouterProduit(produit);
 
@@ -78,14 +74,10 @@ public class PanierServlet extends HttpServlet {
                         quantiteTotale += q;
                     }
 
-<<<<<<< HEAD
-                    System.out.println("Nombre total d'articles dans le panier : " + quantiteTotale);
-=======
                     System.out.println(
                             "Nombre total d'articles dans le panier : "
                                     + quantiteTotale
                     );
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
                     break;
 

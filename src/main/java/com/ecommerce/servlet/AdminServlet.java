@@ -21,12 +21,7 @@ import java.util.List;
 })
 public class AdminServlet extends HttpServlet {
 
-<<<<<<< HEAD
     private ProduitService produitService = new ProduitService();
-=======
-    private ProduitService produitService =
-            new ProduitService();
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
     @Override
     protected void doGet(HttpServletRequest request,
@@ -37,77 +32,35 @@ public class AdminServlet extends HttpServlet {
 
         switch (path) {
 
-            // Liste admin produits
             case "/admin/produits":
-
                 List<Produit> produits = produitService.findAll();
-
-                request.setAttribute(
-                        "produits",
-                        produits
-                );
-
-                request.getRequestDispatcher(
-                        "/WEB-INF/views/admin/produits.jsp"
-                ).forward(request, response);
-
+                request.setAttribute("produits", produits);
+                request.getRequestDispatcher("/WEB-INF/views/admin/produits.jsp")
+                        .forward(request, response);
                 break;
 
-            // Formulaire ajout/modification
             case "/admin/produit-form":
-
                 String idParam = request.getParameter("id");
-
                 if (idParam != null) {
-
                     Long id = Long.parseLong(idParam);
-
                     Produit produit = produitService.findById(id);
-
-<<<<<<< HEAD
                     request.setAttribute("produit", produit);
                 }
-
-                request.getRequestDispatcher(
-                        "/WEB-INF/views/admin/produit-form.jsp")
+                request.getRequestDispatcher("/WEB-INF/views/admin/produit-form.jsp")
                         .forward(request, response);
-=======
-                    request.setAttribute(
-                            "produit",
-                            produit
-                    );
-                }
-
-                request.getRequestDispatcher(
-                        "/WEB-INF/views/admin/produit-form.jsp"
-                ).forward(request, response);
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
-
                 break;
 
-            // Supprimer produit
             case "/admin/produit-delete":
-
                 Long id = Long.parseLong(request.getParameter("id"));
-
                 produitService.supprimer(id);
-
-                response.sendRedirect(
-                        request.getContextPath()
-                                + "/admin/produits"
-                );
-
+                response.sendRedirect(request.getContextPath() + "/admin/produits");
                 break;
 
-<<<<<<< HEAD
-                // admin/commandes
-=======
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
             case "/admin/commandes":
                 List<Commande> commandes = new CommandeService().findAll();
                 request.setAttribute("commandes", commandes);
                 request.getRequestDispatcher("/WEB-INF/views/admin/commandes.jsp")
-                    .forward(request, response);
+                        .forward(request, response);
                 break;
 
             default:
@@ -122,51 +75,22 @@ public class AdminServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String nom = request.getParameter("nom");
-
         String description = request.getParameter("description");
-
         double prix = Double.parseDouble(request.getParameter("prix"));
-
         String image = request.getParameter("image");
-
         String categorie = request.getParameter("categorie");
 
-        Produit produit = new Produit(
-                nom,
-                description,
-                prix,
-                image,
-                categorie
-        );
+        Produit produit = new Produit(nom, description, prix, image, categorie);
 
         String idParam = request.getParameter("id");
 
-        // MODIFIER
-<<<<<<< HEAD
         if (idParam != null && !idParam.isEmpty()) {
-
             produit.setId(Long.parseLong(idParam));
-=======
-        if (idParam != null &&
-                !idParam.isEmpty()) {
-
-            produit.setId(
-                    Long.parseLong(idParam)
-            );
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
-
             produitService.modifier(produit);
-
-        }
-        // AJOUTER
-        else {
-
+        } else {
             produitService.ajouter(produit);
         }
 
-        response.sendRedirect(
-                request.getContextPath()
-                        + "/admin/produits"
-        );
+        response.sendRedirect(request.getContextPath() + "/admin/produits");
     }
 }

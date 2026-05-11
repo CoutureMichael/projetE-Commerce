@@ -7,11 +7,8 @@
 
   <display-name>E-Commerce</display-name>
 
-<<<<<<< HEAD
   <welcome-file-list>
     <welcome-file>login</welcome-file>
   </welcome-file-list>
 
-=======
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 </web-app>

@@ -16,10 +16,6 @@
                 <!-- Liens ADMIN -->
                 <c:if test="${sessionScope.utilisateur != null
                              && sessionScope.utilisateur.role == 'ADMIN'}">
-<<<<<<< HEAD
-=======
-
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
                     <li class="nav-item">
                         <a class="nav-link"
                            href="${pageContext.request.contextPath}/catalogue">
@@ -32,10 +28,7 @@
                             Gérer les produits
                         </a>
                     </li>
-<<<<<<< HEAD
-=======
 
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
                     <li class="nav-item">
                         <a class="nav-link"
                            href="${pageContext.request.contextPath}/admin/commandes">
@@ -43,7 +36,6 @@
                         </a>
                     </li>
                 </c:if>
-<<<<<<< HEAD
                 <!-- Liens USER -->
                 <c:if test="${sessionScope.utilisateur != null
                              && sessionScope.utilisateur.role != 'ADMIN'}">
@@ -72,10 +64,9 @@
                     </a>
                 </li>
                 </c:if>
-=======
+
             </ul>
             <ul class="navbar-nav align-items-center">
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
                 <li class="nav-item me-2">
                     <a class="nav-link position-relative" href="${pageContext.request.contextPath}/panier" title="Panier">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#495057" class="bi bi-cart3" viewBox="0 0 16 16">

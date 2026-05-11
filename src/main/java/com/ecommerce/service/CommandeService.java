@@ -86,15 +86,10 @@ public class CommandeService {
     public List<Commande> findAll() {
         EntityManager em = emf.createEntityManager();
         try {
-<<<<<<< HEAD
             return em.createQuery(
                     "SELECT c FROM Commande c JOIN FETCH c.utilisateur",
                     Commande.class
             ).getResultList();
-=======
-            return em.createQuery("SELECT c FROM Commande c", Commande.class)
-                    .getResultList();
->>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
         } finally {
             em.close();
         }
