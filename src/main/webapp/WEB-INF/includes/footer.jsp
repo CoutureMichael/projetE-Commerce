@@ -5,3 +5,4 @@
         <p class="card-text">© Jade, Jeff, Michaël</p>
     </div>
 </div>
+,
