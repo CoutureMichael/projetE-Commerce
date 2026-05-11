@@ -78,6 +78,7 @@ public class AuthService {
         }
     }
 
+<<<<<<< HEAD
     // Modifier nom et email
     public boolean modifier(int id, String nom, String email) {
         Utilisateur existing = findByEmail(email);
@@ -97,6 +98,8 @@ public class AuthService {
         }
     }
 
+=======
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
     // Ajouter utilisateur
     public void ajouter(Utilisateur utilisateur) {
         EntityManager em =

@@ -21,7 +21,12 @@ import java.util.List;
 })
 public class AdminServlet extends HttpServlet {
 
+<<<<<<< HEAD
     private ProduitService produitService = new ProduitService();
+=======
+    private ProduitService produitService =
+            new ProduitService();
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
     @Override
     protected void doGet(HttpServletRequest request,
@@ -59,12 +64,24 @@ public class AdminServlet extends HttpServlet {
 
                     Produit produit = produitService.findById(id);
 
+<<<<<<< HEAD
                     request.setAttribute("produit", produit);
                 }
 
                 request.getRequestDispatcher(
                         "/WEB-INF/views/admin/produit-form.jsp")
                         .forward(request, response);
+=======
+                    request.setAttribute(
+                            "produit",
+                            produit
+                    );
+                }
+
+                request.getRequestDispatcher(
+                        "/WEB-INF/views/admin/produit-form.jsp"
+                ).forward(request, response);
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
                 break;
 
@@ -82,7 +99,10 @@ public class AdminServlet extends HttpServlet {
 
                 break;
 
+<<<<<<< HEAD
                 // admin/commandes
+=======
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
             case "/admin/commandes":
                 List<Commande> commandes = new CommandeService().findAll();
                 request.setAttribute("commandes", commandes);
@@ -122,9 +142,18 @@ public class AdminServlet extends HttpServlet {
         String idParam = request.getParameter("id");
 
         // MODIFIER
+<<<<<<< HEAD
         if (idParam != null && !idParam.isEmpty()) {
 
             produit.setId(Long.parseLong(idParam));
+=======
+        if (idParam != null &&
+                !idParam.isEmpty()) {
+
+            produit.setId(
+                    Long.parseLong(idParam)
+            );
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
             produitService.modifier(produit);
 

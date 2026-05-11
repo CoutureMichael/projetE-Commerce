@@ -27,7 +27,11 @@ public class Commande implements Serializable {
     private double prixTotal;
 
     // Utilisateur
+<<<<<<< HEAD
     @ManyToOne(fetch = FetchType.EAGER)
+=======
+    @ManyToOne(fetch = FetchType.LAZY)
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
     @JoinColumn(name = "utilisateur_id", nullable = false)
     private Utilisateur utilisateur;
 

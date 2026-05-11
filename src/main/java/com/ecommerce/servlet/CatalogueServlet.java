@@ -16,7 +16,12 @@ import java.util.List;
 })
 public class CatalogueServlet extends HttpServlet {
 
+<<<<<<< HEAD
     private ProduitService produitService = new ProduitService();
+=======
+    private ProduitService produitService =
+            new ProduitService();
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
     @Override
     protected void doGet(HttpServletRequest request,
@@ -28,6 +33,7 @@ public class CatalogueServlet extends HttpServlet {
         // DETAIL PRODUIT
         if (path.equals("/produit-detail")) {
 
+<<<<<<< HEAD
             Long id = Long.parseLong(request.getParameter("id"));
 
             Produit produit = produitService.findById(id);
@@ -36,6 +42,20 @@ public class CatalogueServlet extends HttpServlet {
 
             request.getRequestDispatcher("/WEB-INF/views/catalogue/detail.jsp")
                     .forward(request, response);
+=======
+            Long id = Long.parseLong(
+                    request.getParameter("id")
+            );
+
+            Produit produit =
+                    produitService.findById(id);
+
+            request.setAttribute("produit", produit);
+
+            request.getRequestDispatcher(
+                    "/WEB-INF/views/catalogue/detail.jsp"
+            ).forward(request, response);
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
         }
         // LISTE PRODUITS
@@ -46,7 +66,12 @@ public class CatalogueServlet extends HttpServlet {
             List<Produit> produits;
 
             // Si recherche
+<<<<<<< HEAD
             if (recherche != null && !recherche.isEmpty()) {
+=======
+            if (recherche != null &&
+                    !recherche.isEmpty()) {
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
                 produits = produitService.rechercher(recherche);
 

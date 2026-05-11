@@ -21,6 +21,12 @@
 <body class="bg-light">
 
 <jsp:include page="/WEB-INF/includes/header.jsp"/>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
 <div class="container mt-5 mb-5 pb-5">
 
@@ -173,6 +179,10 @@
 
 </div>
 
+<<<<<<< HEAD
+=======
+>>>>>>> 29cc0e3 (Implemented frontend features and improved ecommerce workflow)
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 <jsp:include page="/WEB-INF/includes/footer.jsp"/>
 
 </body>

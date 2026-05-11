@@ -20,7 +20,12 @@ import java.io.IOException;
 public class AuthServlet extends HttpServlet {
 
     // Service auth
+<<<<<<< HEAD
     private AuthService authService = new AuthService();
+=======
+    private AuthService authService =
+            new AuthService();
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
     @Override
     protected void doGet(HttpServletRequest request,
@@ -38,8 +43,14 @@ public class AuthServlet extends HttpServlet {
         // PAGE INSCRIPTION
         else if (path.equals("/inscription")) {
 
+<<<<<<< HEAD
             request.getRequestDispatcher("/WEB-INF/views/auth/inscription.jsp")
                     .forward(request, response);
+=======
+            request.getRequestDispatcher(
+                    "/WEB-INF/views/auth/inscription.jsp"
+            ).forward(request, response);
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
         }
         // PAGE PROFIL
@@ -55,7 +66,12 @@ public class AuthServlet extends HttpServlet {
             // Détruit session
             request.getSession().invalidate();
 
+<<<<<<< HEAD
             response.sendRedirect(request.getContextPath() + "/login"
+=======
+            response.sendRedirect(
+                    request.getContextPath() + "/login"
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
             );
         }
     }
@@ -78,11 +94,14 @@ public class AuthServlet extends HttpServlet {
 
             inscrire(request, response);
         }
+<<<<<<< HEAD
         // MODIFIER PROFIL
         else if (path.equals("/profil")) {
 
             modifierProfil(request, response);
         }
+=======
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
     }
 
     // Afficher login
@@ -98,14 +117,30 @@ public class AuthServlet extends HttpServlet {
 
             for (Cookie cookie : cookies) {
 
+<<<<<<< HEAD
                 if (cookie.getName().equals("rememberEmail")) {
 
                     request.setAttribute("rememberEmail", cookie.getValue());
+=======
+                if (cookie.getName()
+                        .equals("rememberEmail")) {
+
+                    request.setAttribute(
+                            "rememberEmail",
+                            cookie.getValue()
+                    );
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
                 }
             }
         }
 
+<<<<<<< HEAD
         request.getRequestDispatcher("/WEB-INF/views/auth/login.jsp").forward(request, response);
+=======
+        request.getRequestDispatcher(
+                "/WEB-INF/views/auth/login.jsp"
+        ).forward(request, response);
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
     }
 
     // Connexion utilisateur
@@ -120,12 +155,24 @@ public class AuthServlet extends HttpServlet {
         String remember = request.getParameter("rememberMe");
 
         // Vérifie login
+<<<<<<< HEAD
         Utilisateur utilisateur = authService.connexion(email, password);
+=======
+        Utilisateur utilisateur =
+                authService.connexion(email, password);
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
         // Mauvais login
         if (utilisateur == null) {
 
+<<<<<<< HEAD
             request.setAttribute("erreur", "Email ou mot de passe invalide");
+=======
+            request.setAttribute(
+                    "erreur",
+                    "Email ou mot de passe invalide"
+            );
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
             request.getRequestDispatcher(
                     "/WEB-INF/views/auth/login.jsp"
@@ -137,7 +184,14 @@ public class AuthServlet extends HttpServlet {
         // Création session
         HttpSession session = request.getSession();
 
+<<<<<<< HEAD
         session.setAttribute("utilisateur", utilisateur);
+=======
+        session.setAttribute(
+                "utilisateur",
+                utilisateur
+        );
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
 
         session.setAttribute(
                 "role",
@@ -167,6 +221,7 @@ public class AuthServlet extends HttpServlet {
         }
     }
 
+<<<<<<< HEAD
     // Modifier profil
     private void modifierProfil(HttpServletRequest request,
                                 HttpServletResponse response)
@@ -195,6 +250,8 @@ public class AuthServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/views/auth/profil.jsp").forward(request, response);
     }
 
+=======
+>>>>>>> 6299a66c75a8ae86ce7fbeb9035d805af23f4824
     // Inscription utilisateur
     private void inscrire(HttpServletRequest request,
                           HttpServletResponse response)
