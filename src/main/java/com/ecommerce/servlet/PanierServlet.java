@@ -60,7 +60,25 @@ public class PanierServlet extends HttpServlet {
             switch (action) {
 
                 case "ajouter":
+
+                    System.out.println(
+                            "Ajout produit : "
+                                    + produit.getNom()
+                    );
+
                     panier.ajouterProduit(produit);
+
+                    int quantiteTotale = 0;
+
+                    for (Integer q : panier.getProduits().values()) {
+                        quantiteTotale += q;
+                    }
+
+                    System.out.println(
+                            "Nombre total d'articles dans le panier : "
+                                    + quantiteTotale
+                    );
+
                     break;
 
                 case "supprimer":
